@@ -1,0 +1,38 @@
+---
+pagination:
+  data: products
+  size: 1
+  alias: product
+permalink: /product/{{ product.slug }}/index.html
+---
+
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>{{ product.name }}</title>
+  <link rel="stylesheet" href="/css/product-page.css" />
+{% endblock %}
+
+{% block content %}
+  <div class="product">
+    <div class="image">
+      <img alt="" height="427" width="640" src="{{ product.image }}" />
+    </div>
+
+    <div class="header">
+      <h2>{{ product.name }}</h2>
+      <p class="price">{{ product.price }}</p>
+    </div>
+
+    <p>
+      <jamcart-add
+        image="{{ product.image }}"
+        name="{{ product.name }}"
+        price="{{ product.price }}"
+        open-cart
+        >
+        Add to shopping bag
+      </jamcart-add>
+    </p>
+  </div>
+{% endblock %}

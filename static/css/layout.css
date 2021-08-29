@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 500;
+  src: url(/Cinzel-SemiBold.woff2) format('woff2');
+}
+
+.demo {
+  color: #666;
+  margin: 3em 0;
+  text-align: center;
+}
+.demo a {
+  color: #222;
+  text-decoration: underline;
+}
+.demo p {
+  margin: .5em 0;
+}
+
+.nav {
+  align-items: center;
+  display: grid;
+  grid-template: "logo cart";
+  margin: 2em 0;
+}
+@media (min-width: 45em) {
+  .demo {
+    text-align: right;
+  }
+  .demo p {
+    margin: 0;
+  }
+  .nav {
+    grid-template: "logo cart" / min-content 1fr;
+  }
+}
+
+.logo {
+  font-family: Cinzel;
+  font-size: 250%;
+  font-weight: 500;
+  grid-area: logo;
+  grid-gap: 1em;
+  margin: 0 1em 0 0;
+}
+
+.open {
+  grid-area: cart;
+  margin-left: auto;
+}
